@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置学生对象-->
+    <bean id="student" class="inherit.Student">
+        <property name="name" value="sjt"></property>
+        <property name="age" value="28"></property>
+    </bean>
+    <!--配置gradate对象-->
+    <bean id="gradate" parent="student" class="inherit.Gradate">
+        <!--如果子类重新赋值，则覆盖父类-->
+        <property name="name" value="小明"></property>
+
+        <property name="degree" value="学士"></property>
+    </bean>
+</beans>

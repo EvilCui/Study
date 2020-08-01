@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置master对象-->
+    <bean id="master" class="autowire.Master" autowire="constructor">
+        <!--使用自动装配方式，自动配置依赖-->
+        <property name="name" value="sjt"></property>
+        <!--传统方式，使用ref指定依赖-->
+        <!--<property name="dog" ref="dog"></property>-->
+    </bean>
+
+    <!--配置dog对象，byName时使用.byName要求名字与属性完全一致-->
+    <!--
+    <bean id="dog" class="autowire.Dog">
+    <property name="name" value="小黄"></property>
+    <property name="age" value="2"></property>
+    </bean>-->
+
+    <!--配置dog对象，byType时使用,与指定属性类型相同-->
+    <!--
+    <bean id="dog11" class="autowire.Dog">
+    <property name="name" value="小黄"></property>
+    <property name="age" value="2"></property>
+    </bean>-->
+
+    <!--配置dog对象，constructor时使用,与构造器参数类型一致的bean-->
+
+    <bean id="dog22" class="autowire.Dog">
+        <property name="name" value="小黄"></property>
+        <property name="age" value="2"></property>
+    </bean>
+</beans>

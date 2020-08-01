@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="department" class="collection.Department">
+        <property name="name" value="财务部"></property>
+        <!--给数组注入-->
+        <property name="empName">
+            <list>
+                <value>小明</value>
+                <value>小花</value>
+            </list>
+        </property>
+
+        <!--给list注入-->
+        <!--list可以存放相同的对象，并当作不同对象输出-->
+        <property name="empList">
+            <list>
+                <ref bean="employee1"></ref>
+                <ref bean="employee2"></ref>
+            </list>
+        </property>
+        
+        <!--给set注入-->
+        <!--set集合不可以存放相同对象-->
+        <property name="empSet">
+            <set>
+                <ref bean="employee1"></ref>
+                <ref bean="employee2"></ref>
+            </set>
+        </property>
+
+        <!--给map注入-->
+        <!--输出的对象取决于key值，key值不同，对象相同也可以打出-->
+        <!--当key值相同时，对象相同或者不同都打出最后一个key所对应的对象-->
+        <property name="empMap">
+            <map>
+                <entry key="1" value-ref="employee1"></entry>
+                <entry key="2" value-ref="employee2"></entry>
+                <entry key="3" value-ref="employee2"></entry>
+            </map>
+        </property>
+
+        <!--给属性集合注入-->
+        <property name="pp">
+            <props>
+                <prop key="1">hello</prop>
+                <prop key="2">world</prop>
+            </props>
+        </property>
+
+    </bean>
+    
+    <bean id="employee1" class="collection.Employee">
+        <property name="name" value="北京"></property>
+    </bean>
+    <bean id="employee2" class="collection.Employee">
+        <property name="name" value="上海"></property>
+    </bean>
+
+
+</beans>

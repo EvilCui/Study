@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 配置service
+        <bean> 配置需要创建的对象
+            id ：用于之后从spring容器获得实例时使用的
+            class ：需要创建实例的全限定类名
+    -->
+    <bean name="user" class="Bean.User">
+        <property name="name">
+            <value>小强</value>
+        </property>
+        <!--在user中引用user2的bean-->
+        <property name="user2" ref="user2"></property>
+    </bean>
+
+    <bean id="user2" class="Bean.User2">
+        <property name="name" value="sjt"></property>
+    </bean>
+
+</beans>

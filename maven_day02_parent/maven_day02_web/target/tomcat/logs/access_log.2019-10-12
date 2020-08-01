@@ -1,0 +1,4 @@
+127.0.0.1 - - [12/Oct/2019:17:45:18 +0800] "GET /maven_day02_web HTTP/1.1" 404 - http-bio-8080-exec-1 0
+127.0.0.1 - - [12/Oct/2019:17:45:18 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0
+127.0.0.1 - - [12/Oct/2019:17:49:46 +0800] "GET /maven_day02_web HTTP/1.1" 404 - http-bio-8080-exec-4 0
+127.0.0.1 - - [12/Oct/2019:17:49:46 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-5 0
